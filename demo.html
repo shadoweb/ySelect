@@ -17,6 +17,9 @@ function bfsubmit()
   $("#sort_list").value = $("#sort").ySelectedValues(",");
   alert($("#sort").ySelectedValues(","));
   alert($("#sort").ySelectedTexts(","));
+  $("#sort_list2").value = $("#sort2").ySelectedValues(",");
+  alert($("#sort2").ySelectedValues(","));
+  alert($("#sort2").ySelectedTexts(","));
 }
 </script>
 
@@ -29,10 +32,18 @@ function bfsubmit()
 </tr>
 
 <tr>
-  <th valign="top"><t>类别</t></th>
+  <th valign="top"><t>多选</t></th>
   <td>
   <input type="hidden" name="sort_list" id="sort_list">
   <select id="sort" class="s1" multiple="multiple"><option value="1">招聘</option><option value="2">生活百态 </option></select>
+  </td>
+	</tr>
+
+<tr>
+  <th valign="top"><t>单选</t></th>
+  <td>
+  <input type="hidden" name="sort_list2" id="sort_list2">
+  <select id="sort2" class="s1"><option value="1">招聘</option><option value="2">生活百态 </option></select>
   </td>
 	</tr>
 <script type="text/javascript">
@@ -43,6 +54,16 @@ $(function() {
             searchText: '搜索',//下拉搜索占位符
             showSearch: true,//显示搜索 (true/false)
             numDisplayed: 2,//超出数量整合
+            overflowText: '已选中 {n}项',//超出数量整合文本提示,{n}为数量
+            isCheck:false
+          }
+        );
+        $("#sort2").ySelect(
+          {
+            placeholder: '请选择',//选择框占位符
+            searchText: '搜索',//下拉搜索占位符
+            showSearch: true,//显示搜索 (true/false)
+            numDisplayed: 1,//超出数量整合
             overflowText: '已选中 {n}项',//超出数量整合文本提示,{n}为数量
             isCheck:false
           }
